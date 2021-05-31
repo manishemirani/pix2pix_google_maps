@@ -197,11 +197,11 @@ loss_object = BinaryCrossentropy(from_logits=True)
 
 
 def generator_loss(disc_gen_output, gen_output, target):
-    gan_loss = loss_object(tf.ones_like(disc_gen_output), disc_gen_output)
+    gan_loss = loss_object(tf.ones_like(disc_gen_output), disc_gen_output) # sigmoid
 
-    l1_loss = tf.reduce_mean(tf.abs(target - gen_output))
+    l1_loss = tf.reduce_mean(tf.abs(target - gen_output)) # MAE(Mean Absolute Error)
 
-    total_gen_loss = gan_loss + (LAMBDA * l1_loss)
+    total_gen_loss = gan_loss + (LAMBDA * l1_loss) # total loss
 
     return total_gen_loss, gan_loss, l1_loss
 
@@ -252,7 +252,6 @@ checkpoint = tf.train.Checkpoint(generator_optim=generator_optim,
                                  generator=generator,
                                  discriminator=discriminator)
 
-
 def generate_images(model, test_image, target):
     prediction = model(test_image, training=True)
     plt.figure(figsize=(15, 15))
@@ -292,7 +291,7 @@ def train_step(input_image, target_image):
     return dis_loss, gen_total_loss
 
 
-Epoch = 50
+Epochs = 50
 
 
 def fit(train_ds, epochs, test_ds):
@@ -314,11 +313,8 @@ def fit(train_ds, epochs, test_ds):
                 print()
         print()
 
-        if (epoch + 1) % 5 == 0:
-            checkpoint.save(file_prefix=checkpoint_prefix)
+        checkpoint.save(file_prefix=checkpoint_prefix) # saves data every epoch
         print('Time taken for epoch {} is {} sec\n'.format(epoch + 1,
                                                            time.time() - start))
-    checkpoint.save(file_prefix=checkpoint_prefix)
-
 
 fit(train_dataset, Epoch, test_dataset)
