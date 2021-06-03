@@ -183,7 +183,7 @@ def Generator():
 
     for up, skip in zip(ups, skips):
         x = up(x)
-        x = Concatenate()([x, skip])
+        x = Concatenate()([x, skip])  # skip connection
 
     x = last_layer(x)
 
