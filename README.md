@@ -6,7 +6,7 @@ This code is an example of [image2image](https://arxiv.org/abs/1611.07004) archi
 
 This code will create an image like a target image which is Map, from the input image which is a Satellite image
 
-Reult images:
+Result images:
 
 ![alt text](https://raw.githubusercontent.com/manishemirani/pix2pix_google_map/main/test_images/test2.png)
 
