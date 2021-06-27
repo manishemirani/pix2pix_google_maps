@@ -116,7 +116,8 @@ def downsample(filters, size, batch_norm=True):
     if batch_norm:
         model.add(BatchNormalization())
 
-    model.add(LeakyReLU())  # max(alpha * x, 0)
+    model.add(LeakyReLU())  # f(x) = return x if x >= 0  
+                            # f(x) = return alpha * x if x < 0
 
     return model
 
