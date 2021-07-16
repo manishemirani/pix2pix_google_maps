@@ -14,6 +14,6 @@ Result images:
 
 ![alt text](https://raw.githubusercontent.com/manishemirani/pix2pix_google_map/main/test_images/test3.png)
 
-You can also change the number of epoch for bettre pictures or try another [datsets](https://people.eecs.berkeley.edu/~tinghuiz/projects/pix2pix/datasets/)
+You can also change the number of epoch for bettre pictures or try another [datsets](http://efrosgans.eecs.berkeley.edu/pix2pix/datasets/)
 
 NOTE: All numbers(E.g lambda, conv size, ...) are from the [image2image article](https://arxiv.org/abs/1611.07004)
