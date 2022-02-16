@@ -293,9 +293,6 @@ def train_step(input_image, target_image):
     return dis_loss, gen_total_loss
 
 
-
-
-
 def fit(train_ds, epochs, test_ds):
     for epoch in range(epochs):
         start = time.time()
