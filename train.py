@@ -11,7 +11,7 @@ import tensorflow as tf
 import time
 import os
 
-URl = "https://people.eecs.berkeley.edu/~tinghuiz/projects/pix2pix/datasets/maps.tar.gz"
+URl = "http://efrosgans.eecs.berkeley.edu/pix2pix/datasets/maps.tar.gz"
 
 zip_path = get_file('maps.tar.gz',
                     origin=URl,
