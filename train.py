@@ -42,6 +42,7 @@ BUFFER_SIZE = 400
 BATCH_SIZE = 1
 IMAGE_CHANNELS = 3  # RGB
 LAMBDA = 100
+Epochs = 50
 
 
 def resize(input_img, target_img, height, width):
@@ -292,7 +293,7 @@ def train_step(input_image, target_image):
     return dis_loss, gen_total_loss
 
 
-Epochs = 50
+
 
 
 def fit(train_ds, epochs, test_ds):
@@ -318,4 +319,4 @@ def fit(train_ds, epochs, test_ds):
         print('Time taken for epoch {} is {} sec\n'.format(epoch + 1,
                                                            time.time() - start))
 
-fit(train_dataset, Epoch, test_dataset)
+fit(train_dataset, Epochs, test_dataset)
